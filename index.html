@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wilmas sida</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -17,28 +17,80 @@
 
 <body>
 
-    <h1 class="header"> Wilma von Schéele Frejd</h1>
+    <header class="first-header">
 
-    <div>
-        <h2>Om mig</h2>
-        <p class="about-me">Jag är en postiv och glad person. Jag älskar problemlösning och utmaningar. Är snabblärd
+        <h1 id="framsida"> Wilma von Schéele Frejd</h1>
+
+        <nav id="main-navigation">
+            <ul>
+                <li>
+                    <a href="index.html"><i class="fa-regular fa-user"></i>Om mig</a>
+                </li>
+                <li>
+                    <a href="projekt.html">Projekt</a>
+                </li>
+                <li>
+                    <a href="färdigheter.html">Färdigheter</a>
+                </li>
+                <li>
+                    <a href="kontakt.html"><i class="fa-regular fa-id-card"></i> Kontakta mig</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'OmMig')" id="defaultOpen">Om mig</button>
+        <button class="tablinks" onclick="openCity(event, 'Utbildningar')">Utbildningar</button>
+        <button class="tablinks" onclick="openCity(event, 'Arbetslivserfarenhet')">Arbetslivserfarenhet</button>
+        <button class="tablinks" onclick="openCity(event, 'PraktikLIA')">Praktik/LIA</button>
+    </div>
+
+    <div id="OmMig" class="tabcontent">
+        <h3>Om mig</h3>
+        <p>Jag är 27 år, har 2 barn 5 & 4 år. Bor i en lägenhet i Åby strax utanför Norrköping.</p>
+        <p>Jag är en postiv och glad person. Älskar problemlösning och utmaningar. Är snabblärd
             och tycker om att utmana mig själv.</p>
     </div>
 
-    <ul class="educations">
-        <h3>Utbildningar <i class="fa-solid fa-graduation-cap"></i></h3>
-        <li id="grit">Grit academy, Linköping - Backendutvecklare</li>
-        <li id="tuc">Tuc Sweden, Linköping - Mjukvarutestare</li>
-        <li id="curt">Curt Nicolin gymnasiet, Finspång - Industritekniska programmet</li>
-    </ul>
+    <div id="Utbildningar" class="tabcontent">
+        <h3>Utbildningar</h3>
+        <p>Grit academy, Linköping - Backend utvecklare</p>
+        <p>Tuc Sweden, Linköping - Mjukvarutestare</p>
+        <p>Curt Nicolin gymnasiet, Finspång - Industritekniska</p>
+    </div>
 
-    <ul class="work">
+    <div id="Arbetslivserfarenhet" class="tabcontent">
         <h3>Arbetslivserfarenhet</h3>
-        <li>Gränges, Finspång</li>
-        <li>Förskola, Norrköping</li>
-    </ul>
+        <p>Gränges Sweden AB, Finspång</p>
+        <p>Förskola, Norrköping</p>
+    </div>
 
+    <div id="PraktikLIA" class="tabcontent">
+        <h3>Praktik/LIA</h3>
+        <p>Sapa</p>
+        <p>Siemens</p>
+        <p>Gränges</p>
+        <p>Migrationsverket</p>
+    </div>
+
+    <script>
+        function openCity(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
 
 </body>
-
-</html>

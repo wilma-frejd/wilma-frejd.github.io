@@ -2,36 +2,137 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    margin-left: 10px;
+}
+
+/**--- General---**/
+
+h1{
+    font-size: 3.8rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "leckerli one";
+}
+h3{
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+}
+
+p {
+    font-family: "sour gummy";
+    font-size: 1.2rem;
 }
 
 body {
-    background: linear-gradient(90deg, #da8484, #362323);
+    background: linear-gradient(90deg, #da8484, #473030);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+    margin: 0 2rem;
 }
 
-h1 {
-    font-family: "leckerli one";
-    margin-bottom: 1rem;
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+/**--- Navigation ---**/
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Style the unordered list */
+nav ul {
+    display: flex; /* Make the list items appear horizontally */
+    list-style: none; /* Remove the bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    justify-content: center;
+    width: 100%; /* Take up full width of the nav */
+    color: black;
+}
+
+/* Style the list items */
+nav li {
+    font-family: "leckerli one";
+    display: flex;
+    align-items: center;
+    margin: 0 25px; /* Add some space between items */
+    border: 3px solid #3b2c2c;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    
+}
+
+/* Style the links */
+nav a {
+    text-decoration: none; /* Optional: removes underline from links */
+    /* Add additional styling for your links */
+    color: black;
+}
+
+/**--- Tabs med information ---**/
+
+.tab button {
     font-family: "leckerli one";
 }
+
 
 .about-me {
     font-family: sour gummy;
 }
 
-.unordered-list {
-    padding-left: 1rem;
+/* Style the tab */
+.tab {
+    float: left;
+    border: 3px solid #3b2c2c;
+    border-radius: 0.8rem;
+    background-color: inherit;
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
 }
 
+/* Style the buttons inside the tab */
+.tab button {
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
 
-div {}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #956565;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #956565;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 3px solid #3b2c2c;
+    border-radius: 0.8rem;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    overflow: auto;
+}
