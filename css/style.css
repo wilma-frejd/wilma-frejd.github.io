@@ -6,38 +6,45 @@
 
 /**--- General---**/
 
-h1{
+h1 {
     font-size: 3.8rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "leckerli one";
 }
-h3{
+
+h3 {
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
 }
 
 p {
     font-family: "sour gummy";
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 body {
-    background: linear-gradient(90deg, #da8484, #473030);
+    background: linear-gradient(90deg, #da8484, #6f4e4e);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0 2rem;
 }
 
-header {
+header.standard-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
 }
+
 
 /**--- Navigation ---**/
 nav {
@@ -49,12 +56,17 @@ nav {
 
 /* Style the unordered list */
 nav ul {
-    display: flex; /* Make the list items appear horizontally */
-    list-style: none; /* Remove the bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    display: flex;
+    /* Make the list items appear horizontally */
+    list-style: none;
+    /* Remove the bullet points */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
     justify-content: center;
-    width: 100%; /* Take up full width of the nav */
+    width: 100%;
+    /* Take up full width of the nav */
     color: black;
 }
 
@@ -63,18 +75,21 @@ nav li {
     font-family: "leckerli one";
     display: flex;
     align-items: center;
-    margin: 0 25px; /* Add some space between items */
+    margin: 0 25px;
+    /* Add some space between items */
     border: 3px solid #3b2c2c;
     border-radius: 0.3rem;
     padding: 0.5rem;
-    
 }
 
 /* Style the links */
 nav a {
-    text-decoration: none; /* Optional: removes underline from links */
-    /* Add additional styling for your links */
+    text-decoration: none;
     color: black;
+}
+
+nav li:hover {
+    background-color: #6e4e4e;
 }
 
 /**--- Tabs med information ---**/
@@ -135,4 +150,92 @@ nav a {
     border-left: none;
     height: 300px;
     overflow: auto;
+}
+
+/**--- Projects --**/
+
+main.projects{
+    display: grid;
+    justify-items: center;
+    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    text-align: center;
+}
+
+
+/**--- Skills --**/
+
+main.skills{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#personal-skills>ul {
+    font-family: "sour gummy";
+    list-style: none;
+}
+
+/**--- Contact --**/
+
+main.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+div>img {
+    width: 304px;
+    height: 340px;
+    object-fit: cover;
+    margin-right: 0rem;
+    padding: 1rem;
+}
+
+div#contact-info > h2{
+    padding-top: 1rem;
+}
+
+div#contact-info > a {
+    font-family: "sour gummy";
+    font-size: 2.5rem;
+}
+
+
+footer.all{
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+}
+
+footer.project {
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+footer h3 {
+    text-align: center;
+}
+
+/**--- Media queries --**/
+
+@media (min-width: 768px) {
+    .projects {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        max-width: 1600px;
+        /* limit the container width */
+        margin: 0 auto;
+        /* center the container */
+    }
 }
