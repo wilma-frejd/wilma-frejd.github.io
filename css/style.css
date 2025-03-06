@@ -29,12 +29,15 @@ p {
     font-size: 1rem;
 }
 
+
 body {
     background: linear-gradient(90deg, #da8484, #6f4e4e);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0 2rem;
+    position: relative;
+    padding-bottom: 70px; 
 }
 
 header.standard-header {
@@ -155,7 +158,7 @@ nav li:hover {
 
 /**--- Projects --**/
 
-main.projects{
+main.projects {
     display: grid;
     justify-items: center;
     grid-gap: 8px;
@@ -166,11 +169,19 @@ main.projects{
 
 /**--- Skills --**/
 
-main.skills{
+main.skills {
     font-family: "sour gummy";
 }
-main.skills h2{
+
+main.skills h2 {
     padding: 10px;
+}
+
+main.skills h2::before,
+main.skills h2::after {
+    content: "★";
+    margin: 0 10px;
+    color: #3b2c2c;
 }
 
 .technical-container {
@@ -207,13 +218,33 @@ main.skills h2{
 }
 
 /* Add delay to each skill to create a staggered effect */
-.technical-skill:nth-child(1) { animation-delay: 0.2s; }
-.technical-skill:nth-child(2) { animation-delay: 0.4s; }
-.technical-skill:nth-child(3) { animation-delay: 0.6s; }
-.technical-skill:nth-child(4) { animation-delay: 0.8s; }
-.technical-skill:nth-child(5) { animation-delay: 1s; }
-.technical-skill:nth-child(6) { animation-delay: 1.2s; }
-.technical-skill:nth-child(7) { animation-delay: 1.4s; }
+.technical-skill:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.technical-skill:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.technical-skill:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.technical-skill:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.technical-skill:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.technical-skill:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.technical-skill:nth-child(7) {
+    animation-delay: 1.4s;
+}
 
 
 .soft-container {
@@ -222,7 +253,8 @@ main.skills h2{
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s forwards;
-    animation-delay: 1.6s; /* Start after technical skills finish */
+    animation-delay: 1.6s;
+    /* Start after technical skills finish */
 }
 
 .soft-skills {
@@ -258,11 +290,25 @@ main.skills h2{
 }
 
 /* Add delay to each soft skill */
-.soft-skill:nth-child(1) { animation-delay: 1.7s; }
-.soft-skill:nth-child(2) { animation-delay: 1.9s; }
-.soft-skill:nth-child(3) { animation-delay: 2.1s; }
-.soft-skill:nth-child(4) { animation-delay: 2.3s; }
-.soft-skill:nth-child(5) { animation-delay: 2.5s; }
+.soft-skill:nth-child(1) {
+    animation-delay: 1.7s;
+}
+
+.soft-skill:nth-child(2) {
+    animation-delay: 1.9s;
+}
+
+.soft-skill:nth-child(3) {
+    animation-delay: 2.1s;
+}
+
+.soft-skill:nth-child(4) {
+    animation-delay: 2.3s;
+}
+
+.soft-skill:nth-child(5) {
+    animation-delay: 2.5s;
+}
 
 /* Section 3: Other skills - Fade In Up */
 .other-container {
@@ -271,7 +317,8 @@ main.skills h2{
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s forwards;
-    animation-delay: 2.6s; /* Start after soft skills finish */
+    animation-delay: 2.6s;
+    /* Start after soft skills finish */
 }
 
 .other-skills {
@@ -306,13 +353,18 @@ main.skills h2{
 }
 
 /* Add delay to each skill */
-.other-skill:nth-child(1) { animation-delay: 2.7s; }
-.other-skill:nth-child(2) { animation-delay: 2.9s; }
+.other-skill:nth-child(1) {
+    animation-delay: 2.7s;
+}
+
+.other-skill:nth-child(2) {
+    animation-delay: 2.9s;
+}
 
 
 /**--- Contact --**/
 
-main.contact{
+main.contact {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -329,17 +381,17 @@ div>img {
     padding: 1rem;
 }
 
-div#contact-info > h2{
+div#contact-info>h2 {
     padding-top: 1rem;
 }
 
-div#contact-info > a {
+div#contact-info>a {
     font-family: "sour gummy";
     font-size: 2.5rem;
 }
 
 
-footer.all{
+/* footer {
     background-color: inherit;
     color: rgb(0, 0, 0);
     padding: 1rem 0;
@@ -347,31 +399,184 @@ footer.all{
     left: 0;
     width: 100%;
     position: fixed;
-}
+    text-align: center;
+    z-index: 100;
+}  */
 
-footer.project {
+footer {
     background-color: inherit;
     color: rgb(0, 0, 0);
     padding: 1rem 0;
     bottom: 0;
     left: 0;
     width: 100%;
-    
-}
-
-footer h3 {
+    position: fixed;
     text-align: center;
-}
+    z-index: 100;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin-left: -2rem; /* Compensate for body margin */
+    width: calc(100% + 4rem); /* Adjust for body margins */
+}  
+    
+
 
 
 /**--- Media queries --**/
 
-@media (min-width: 768px) {
-    .projects {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        max-width: 1600px;
-        /* limit the container width */
-        margin: 0 auto;
-        /* center the container */
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    /* Adjust header and navigation */
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        margin: 10px 15px;
+    }
+    
+    /* Adjust tab content */
+    .tab {
+        width: 35%;
+    }
+    
+    .tabcontent {
+        width: 65%;
+    }
+}
+
+/* Large phones and small tablets */
+@media (max-width: 768px) {
+    body {
+        margin: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Navigation adjustments */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+        width: 80%;
+        justify-content: center;
+    }
+    
+    /* About me tab adjustments */
+    .tab {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin-bottom: 15px;
+    }
+    
+    .tabcontent {
+        width: 100%;
+        float: none;
+        border-left: 3px solid #3b2c2c;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    /* Adjust projects grid */
+    main.projects {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    /* Footer adjustment */
+    footer {
+        margin-left: -1rem;
+        width: calc(100% + 2rem);
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    body {
+        margin: 0 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    nav li {
+        width: 90%;
+        padding: 0.3rem;
+    }
+    
+    /* Skills adjustments */
+    .technical-skill, .soft-skill {
+        padding: 10px 15px;
+    }
+    
+    .other-skill {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Contact adjustments */
+    main.contact {
+        flex-direction: column;
+    }
+    
+    div > img {
+        width: 250px;
+        height: 280px;
+        margin-right: 0;
+    }
+    
+    div#contact-info > a {
+        font-size: 1.8rem;
+    }
+    
+    /* Footer adjustment */
+    footer {
+        margin-left: -0.5rem;
+        width: calc(100% + 1rem);
+        padding: 0.5rem 0;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tab button {
+        font-size: 1.2rem;
+        padding: 15px 10px;
+    }
+    
+    /* Further reduce sizes */
+    .technical-skill, .soft-skill {
+        padding: 8px 12px;
+    }
+    
+    .other-skill {
+        width: 80px;
+        height: 80px;
+    }
+    
+    div > img {
+        width: 220px;
+        height: 250px;
+    }
+    
+    div#contact-info > a {
+        font-size: 1.5rem;
     }
 }
