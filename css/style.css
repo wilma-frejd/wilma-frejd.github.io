@@ -37,7 +37,7 @@ body {
     min-height: 100vh;
     margin: 0 2rem;
     position: relative;
-    padding-bottom: 70px; 
+    padding-bottom: 70px;
 }
 
 header.standard-header {
@@ -51,43 +51,31 @@ header.standard-header {
 
 /**--- Navigation ---**/
 
-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-/* Style the unordered list */
 nav ul {
     display: flex;
-    /* Make the list items appear horizontally */
     list-style: none;
-    /* Remove the bullet points */
     padding: 0;
-    /* Remove default padding */
     margin: 0;
-    /* Remove default margin */
     justify-content: center;
     width: 100%;
-    /* Take up full width of the nav */
     color: black;
 }
 
-/* Style the list items */
 nav li {
     font-family: "leckerli one";
-    display: flex;
-    align-items: center;
+    position: relative;
     margin: 0 25px;
-    /* Add some space between items */
     border: 3px solid #3b2c2c;
     border-radius: 0.3rem;
-    padding: 0.5rem;
+    padding: 0;
+    display: inline-block;
 }
 
-/* Style the links */
-nav a {
+nav li a {
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: black;
 }
@@ -96,12 +84,18 @@ nav li:hover {
     background-color: #6e4e4e;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
 /**--- About me ---**/
 
 .tab button {
     font-family: "leckerli one";
 }
-
 
 .about-me {
     font-family: sour gummy;
@@ -391,18 +385,6 @@ div#contact-info>a {
 }
 
 
-/* footer {
-    background-color: inherit;
-    color: rgb(0, 0, 0);
-    padding: 1rem 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    position: fixed;
-    text-align: center;
-    z-index: 100;
-}  */
-
 footer {
     background-color: inherit;
     color: rgb(0, 0, 0);
@@ -413,13 +395,9 @@ footer {
     position: fixed;
     text-align: center;
     z-index: 100;
-    box-sizing: border-box; /* Ensure padding is included in width */
-    margin-left: -2rem; /* Compensate for body margin */
-    width: calc(100% + 4rem); /* Adjust for body margins */
-}  
-    
-
-
+    box-sizing: border-box;
+    width: calc(100% + 4rem);
+}
 
 /**--- Media queries --**/
 
@@ -428,21 +406,21 @@ footer {
     h1 {
         font-size: 3rem;
     }
-    
+
     /* Adjust header and navigation */
     nav ul {
         flex-wrap: wrap;
     }
-    
+
     nav li {
         margin: 10px 15px;
     }
-    
+
     /* Adjust tab content */
     .tab {
         width: 35%;
     }
-    
+
     .tabcontent {
         width: 65%;
     }
@@ -453,23 +431,23 @@ footer {
     body {
         margin: 0 1rem;
     }
-    
+
     h1 {
         font-size: 2.5rem;
     }
-    
+
     /* Navigation adjustments */
     nav ul {
         flex-direction: column;
         align-items: center;
     }
-    
+
     nav li {
         margin: 5px 0;
         width: 80%;
         justify-content: center;
     }
-    
+
     /* About me tab adjustments */
     .tab {
         width: 100%;
@@ -477,7 +455,7 @@ footer {
         float: none;
         margin-bottom: 15px;
     }
-    
+
     .tabcontent {
         width: 100%;
         float: none;
@@ -485,12 +463,12 @@ footer {
         height: auto;
         min-height: 200px;
     }
-    
+
     /* Adjust projects grid */
     main.projects {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-    
+
     /* Footer adjustment */
     footer {
         margin-left: -1rem;
@@ -503,45 +481,46 @@ footer {
     body {
         margin: 0 0.5rem;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h3 {
         font-size: 1.1rem;
     }
-    
+
     nav li {
         width: 90%;
         padding: 0.3rem;
     }
-    
+
     /* Skills adjustments */
-    .technical-skill, .soft-skill {
+    .technical-skill,
+    .soft-skill {
         padding: 10px 15px;
     }
-    
+
     .other-skill {
         width: 100px;
         height: 100px;
     }
-    
+
     /* Contact adjustments */
     main.contact {
         flex-direction: column;
     }
-    
-    div > img {
+
+    div>img {
         width: 250px;
         height: 280px;
         margin-right: 0;
     }
-    
-    div#contact-info > a {
+
+    div#contact-info>a {
         font-size: 1.8rem;
     }
-    
+
     /* Footer adjustment */
     footer {
         margin-left: -0.5rem;
@@ -555,28 +534,29 @@ footer {
     h1 {
         font-size: 1.8rem;
     }
-    
+
     .tab button {
         font-size: 1.2rem;
         padding: 15px 10px;
     }
-    
+
     /* Further reduce sizes */
-    .technical-skill, .soft-skill {
+    .technical-skill,
+    .soft-skill {
         padding: 8px 12px;
     }
-    
+
     .other-skill {
         width: 80px;
         height: 80px;
     }
-    
-    div > img {
+
+    div>img {
         width: 220px;
         height: 250px;
     }
-    
-    div#contact-info > a {
+
+    div#contact-info>a {
         font-size: 1.5rem;
     }
 }
